@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.debug {
+  background-color: red;
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+
+section {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
