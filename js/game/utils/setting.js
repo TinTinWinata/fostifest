@@ -7,6 +7,11 @@ export const MOVEMENT_UP = 'w';
 export const MOVEMENT_DOWN = 's';
 export const MOVEMENT_LEFT = 'a';
 export const MOVEMENT_RIGHT = 'd';
+export const MOVEMENT_RUN = 'shift';
+export const FPS = 60;
+export const CHARACTER_SPEED = 3;
+export const RUN_CHARACTER_SPEED = 4;
+
 export const MOVEMENT_LIST = [
   MOVEMENT_UP,
   MOVEMENT_DOWN,
@@ -15,9 +20,16 @@ export const MOVEMENT_LIST = [
 ];
 
 const ctx = canvas.getContext('2d');
+export default ctx;
+
+export const offsetX = -200;
+export const offsetY = -200;
 export const collisions = [];
 export const keys = [];
 export const collideMap = [];
-export default ctx;
-export const offsetX = -300;
-export const offsetY = -300;
+export const moveable = [];
+
+export class Setting {
+  static runTime = 0;
+  static lastKey = '';
+}

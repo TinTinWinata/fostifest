@@ -1,6 +1,6 @@
 import { data } from '../data/data.js';
 import { debug } from './debug-helper.js';
-import ctx, { collideMap, offsetX } from './setting.js';
+import { collideMap, moveable } from './setting.js';
 
 export const initiateCollide = () => {
   const collisions = data.layers[1];
@@ -17,29 +17,25 @@ export const initiateCollide = () => {
 };
 
 export const drawCollisions = () => {
+  const bg = moveable[0];
   collideMap.forEach((collide) => {
-    // console.log(collide.x, collide.y);
-    ctx.fillStyle = 'red';
-    ctx.fillRect(
-      collide.x + offsetX,
-      collide.y + offsetX,
-      collide.w,
-      collide.h
-    );
+    debug(collide.x + bg.x, collide.y + bg.y, collide.w, collide.h);
   });
 };
 
-export function isCollide(x, y, w, h) {
-  debug(x, y, w, h);
+export function isCollideCollider(x, y, w, h) {
+  const bg = moveable[0];
+  // debug(x, y, w, h);
   if (collideMap.length === 0) initiateCollide();
   for (let i = 0; i < collideMap.length; i++) {
     const collide = collideMap[i];
     if (
-      x + w >= collide.x &&
-      x <= collide.x + collide.w &&
-      y + h >= collide.y &&
-      y <= collide.y + collide.h
+      x + w >= collide.x + bg.x &&
+      x <= collide.x + bg.x + collide.w &&
+      y + h >= collide.y + bg.y &&
+      y <= collide.y + collide.h + bg.y
     )
       return true;
   }
+  return false;
 }

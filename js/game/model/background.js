@@ -6,7 +6,13 @@ export class Background {
     this.y = y;
     this.sprite = sprite;
   }
+  move(incX, incY) {
+    this.x -= incX;
+    this.y -= incY;
+  }
+  logic() {}
   render() {
+    this.logic();
     ctx.drawImage(this.sprite, this.x, this.y);
   }
 }
