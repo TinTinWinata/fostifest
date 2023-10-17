@@ -1,0 +1,85 @@
+const datas = [
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+  {
+    date: '20 - 24 December - 4 Day 3 Night',
+    title: 'Bali and Lombok Tour',
+    content:
+      '  Amazing package for you and your friend to be satisfied on vacation in Bali - Lombok for...',
+  },
+];
+
+const left = document.getElementById('beach-list-left');
+
+const beachRouteDiv = document.getElementById('beachRoot');
+const toBeFixed = document.getElementsByClassName('to-be-fixed');
+
+datas.forEach((data) => {
+  const newDiv = document.createElement('div');
+  newDiv.classList.add('d-flex', 'flex-column', 'gap-3');
+  newDiv.innerHTML = `
+  <div class="date">
+    ${data.date}
+    </div>
+    <div class="title">
+    ${data.title}
+  </div>
+  <div class="content">
+    ${data.content}
+    </div>
+  <hr class="h-full bg-dark"/>
+  `;
+  beachRouteDiv.appendChild(newDiv);
+});
+
+window.onscroll = () => {
+  const scrollTop = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  console.log(window.innerHeight);
+  const contentHeight = left.getBoundingClientRect().height;
+  const contentTop = left.getBoundingClientRect().top + window.pageYOffset;
+  // if (scrollTop >= contentHeight - viewportHeight + contentTop) {
+  //   console.log('melebihi');
+  // }
+  if (scrollTop >= viewportHeight + 20) {
+    for (let i = 0; i < toBeFixed.length; i++) {
+      toBeFixed[i].style.position = 'fixed';
+      toBeFixed[i].style.left = '96px';
+      toBeFixed[i].style.top = '60px';
+      toBeFixed[i].style.width = '500px';
+    }
+  } else {
+    for (let i = 0; i < toBeFixed.length; i++) {
+      toBeFixed[i].style.position = '';
+    }
+  }
+  // const contentHeight =
+};
