@@ -1,0 +1,31 @@
+#jumbotron .background{
+  background-color: black;
+  opacity: 0.3;
+}
+
+#jumbotron .down-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(0,0,0);
+  background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.bottom-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 6.3%;
+  height: 20%;
+}
+
+#jumbotron .bottom-content{
+  font-weight: 500;
+}
+
+.left-text{
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+  left: 4%;
+}

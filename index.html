@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fostifest 2023</title>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/jumbotron.css" />
+    <link rel="stylesheet" href="./css/loading.css" />
 
     <!-- Bootstrap CDN -->
     <link
@@ -19,14 +23,66 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Game Script -->
+    <!-- Custom Script -->
     <script type="module" src="./js/game/main.js" defer></script>
+    <script src="./js/jumbotron.js" defer></script>
   </head>
+
   <body>
-    <!-- Game Section -->
-    <section class="debug">
-      <div id="root-audio"></div>
-      <canvas id="gameCanvas"></canvas>
+    <!-- Jumbotron Section -->
+    <section id="jumbotron" class="position-relative">
+      <div class="bottom-content z-3 d-flex">
+        <div
+          class="d-flex h-fit w-full align-items-center justify-content-between"
+        >
+          <div class="text-white">View Experiences</div>
+          <div class="loading">
+            <div id="bar" class="bar"></div>
+          </div>
+          <div class="text-white">Click and Hold to </br> View All Experiences</div>
+        </div>
+      </div>
+
+      <!-- Game -->
+      <div class="z-1 position-absolute w-h-full top-0 start-0">
+        <div id="root-audio"></div>
+        <canvas class="w-h-full" id="gameCanvas"></canvas>
+      </div>
+
+      <!-- Jumbotron Background -->
+      <div class="z-2 w-h-full top-0 start-0 position-absolute">
+        <div class="bottom-0 position-absolute z-3 down-background"></div>
+        <div class="z-4 position-absolute left-text">
+          <svg viewbox="0 0 10 2.3">
+            <text
+              x="3"
+              y="1"
+              text-anchor="middle"
+              font-size="1.2"
+              fill="none"
+              stroke-width=".035"
+              stroke="#fff"
+              font-family="sans-serif"
+            >
+              Indonesia
+            </text>
+            <text
+              x="3.4"
+              y="2.2"
+              text-anchor="end"
+              font-size="1.2"
+              fill="#fff"
+              stroke-width=".035"
+              stroke="#fff"
+              font-family="sans-serif"
+            >
+              Place
+            </text>
+          </svg>
+        </div>
+        <!-- Added Black Background -->
+        <div class="w-h-full background"></div>
+      </div>
     </section>
   </body>
 </html>

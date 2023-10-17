@@ -12,15 +12,54 @@
   height: 100vh;
 }
 
+.w-full{
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+
 .debug {
   background-color: red;
 }
 
-#gameCanvas {
+.w-fit{
+  width: fit-content;
+}
+
+.h-fit{
+  height: fit-content;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.z-1{
+  z-index: 1;
+}
+
+.z-2{
+  z-index: 2;
+}
+.z-3{
+  z-index: 3;
+}
+.z-4{
+  z-index: 4;
+}
+.z-5{
+  z-index: 5;
+}
+
+.w-h-full {
   width: 100%;
   height: 100%;
 }
-
 
 section {
   overflow: hidden;

@@ -46,6 +46,7 @@ const render = () => {
     bg.render();
     char.render();
     fg.render();
+    // drawCollisions();
     temp = 0;
   }
   requestAnimationFrame(render);
