@@ -63,13 +63,12 @@ datas.forEach((data) => {
 window.onscroll = () => {
   const scrollTop = window.scrollY;
   const viewportHeight = window.innerHeight;
-  console.log(window.innerHeight);
   const contentHeight = left.getBoundingClientRect().height;
   const contentTop = left.getBoundingClientRect().top + window.pageYOffset;
   // if (scrollTop >= contentHeight - viewportHeight + contentTop) {
   //   console.log('melebihi');
   // }
-  if (scrollTop >= viewportHeight + 20) {
+  if (scrollTop >= viewportHeight * 2 + 20) {
     for (let i = 0; i < toBeFixed.length; i++) {
       toBeFixed[i].style.position = 'fixed';
     }
