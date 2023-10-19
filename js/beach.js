@@ -72,9 +72,6 @@ window.onscroll = () => {
   if (scrollTop >= viewportHeight + 20) {
     for (let i = 0; i < toBeFixed.length; i++) {
       toBeFixed[i].style.position = 'fixed';
-      toBeFixed[i].style.left = '96px';
-      toBeFixed[i].style.top = '60px';
-      toBeFixed[i].style.width = '500px';
     }
   } else {
     for (let i = 0; i < toBeFixed.length; i++) {
