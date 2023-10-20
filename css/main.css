@@ -4,6 +4,11 @@
   padding: 0;
   box-sizing: border-box;
   color: #4B4B4B;
+  font-family: sans-serif;
+}
+
+.consolas {
+  font-family: consolas;
 }
 
 .w-screen {
@@ -39,6 +44,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.abs-center{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
 
 .z-1{
@@ -153,6 +165,12 @@ border: 3px solid #ffffff;
   width: 400px;
 }
 
+.information  p{
+  font-size: 20px;
+  line-height: 25px;
+  /* font-weight: 500; */
+}
+
 .information .container {
   padding: 100px 0px;
 }
@@ -164,3 +182,4 @@ border: 3px solid #ffffff;
 .cursor-pointer{
   cursor: pointer;
 }
+

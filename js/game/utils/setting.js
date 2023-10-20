@@ -22,14 +22,16 @@ export const MOVEMENT_LIST = [
 const ctx = canvas.getContext('2d');
 export default ctx;
 
-export const offsetX = -200;
-export const offsetY = -200;
+export const offsetX = -2539;
+export const offsetY = -950;
 export const collisions = [];
 export const keys = [];
 export const collideMap = [];
 export const moveable = [];
+export const dialogSpeed = 40; // 5 ms
 
 export class Setting {
   static runTime = 0;
   static lastKey = '';
+  static gameIsStart = false;
 }

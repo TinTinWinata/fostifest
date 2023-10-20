@@ -56,3 +56,4 @@ export class AudioData {
     this.audios[state].loop = loop;
   }
 }
+  

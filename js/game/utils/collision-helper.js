@@ -3,7 +3,7 @@ import { debug } from './debug-helper.js';
 import { collideMap, moveable } from './setting.js';
 
 export const initiateCollide = () => {
-  const collisions = data.layers[1];
+  const collisions = data.layers[2];
   const map = [];
   for (let i = 0; i < collisions.data.length; i += collisions.width) {
     map.push(collisions.data.slice(i, collisions.width + i));

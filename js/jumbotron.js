@@ -5,7 +5,6 @@ const gameHider = document.getElementsByClassName('game-hider');
 
 playBtnDiv.addEventListener('click', () => {
   for (let i = 0; i < gameHider.length; i++) {
-    console.log(gameHider[i]);
     gameHider[i].style.display = 'none';
   }
   startGame();

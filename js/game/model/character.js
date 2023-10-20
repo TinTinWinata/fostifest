@@ -1,4 +1,5 @@
 import { isCollideCollider } from '../utils/collision-helper.js';
+import { isDialogOpen } from '../utils/dialog-helper.js';
 import ctx, {
   CHARACTER_SPEED,
   MOVEMENT_DOWN,
@@ -12,6 +13,7 @@ import ctx, {
   keys,
   moveable,
 } from '../utils/setting.js';
+import { Trigger } from './trigger.js';
 
 export class Character {
   constructor(sprite, moveMoveable) {
@@ -104,11 +106,12 @@ export class Character {
     }
 
     // Checking movement
-    MOVEMENT_LIST.forEach((movementKey) => {
-      if (keys[movementKey]) {
-        this.checkMove(movementKey);
-      }
-    });
+    if (!isDialogOpen && !Trigger.active)
+      MOVEMENT_LIST.forEach((movementKey) => {
+        if (keys[movementKey]) {
+          this.checkMove(movementKey);
+        }
+      });
 
     if (keys[MOVEMENT_RUN] === true) {
       this.speed = RUN_CHARACTER_SPEED;

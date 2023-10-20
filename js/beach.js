@@ -66,13 +66,15 @@ window.onscroll = () => {
   const viewportHeight = window.innerHeight;
   const contentHeight = left.getBoundingClientRect().height;
   const contentTop = left.getBoundingClientRect().top + window.pageYOffset;
+  // console.log('Scroll : ', scrollTop);
+  // console.log('Content Top : ', contentTop);
   // if (scrollTop >= contentHeight - viewportHeight + contentTop) {
   //   console.log('melebihi');
   // }
   const gone =
     lastSection.getBoundingClientRect().top -
     lastSection.getBoundingClientRect().height;
-  if (scrollTop >= viewportHeight * 2 + 20 && gone > 0) {
+  if (scrollTop >= contentTop - 60 && gone > 0) {
     for (let i = 0; i < toBeFixed.length; i++) {
       toBeFixed[i].style.position = 'fixed';
     }
