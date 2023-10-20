@@ -1,3 +1,16 @@
+import { startGame } from './game/main.js';
+
+const playBtnDiv = document.getElementById('play-game-btn');
+const gameHider = document.getElementsByClassName('game-hider');
+
+playBtnDiv.addEventListener('click', () => {
+  for (let i = 0; i < gameHider.length; i++) {
+    console.log(gameHider[i]);
+    gameHider[i].style.display = 'none';
+  }
+  startGame();
+});
+
 const barDiv = document.getElementById('bar');
 const second = 8;
 
@@ -9,7 +22,6 @@ const triggerLoading = () => {
 };
 
 const onLoading = () => {
-  console.log('on loading ...');
   barDiv.style.width = '100%';
   barDiv.style.transition = `all ${second}s ease`;
 };

@@ -39,6 +39,7 @@ const datas = [
 
 const left = document.getElementById('beach-list-left');
 
+const lastSection = document.getElementById('last-section');
 const beachRouteDiv = document.getElementById('beachRoot');
 const toBeFixed = document.getElementsByClassName('to-be-fixed');
 
@@ -68,7 +69,10 @@ window.onscroll = () => {
   // if (scrollTop >= contentHeight - viewportHeight + contentTop) {
   //   console.log('melebihi');
   // }
-  if (scrollTop >= viewportHeight * 2 + 20) {
+  const gone =
+    lastSection.getBoundingClientRect().top -
+    lastSection.getBoundingClientRect().height;
+  if (scrollTop >= viewportHeight * 2 + 20 && gone > 0) {
     for (let i = 0; i < toBeFixed.length; i++) {
       toBeFixed[i].style.position = 'fixed';
     }

@@ -1,3 +1,4 @@
+import { AudioData } from './model/audio.js';
 import { Background } from './model/background.js';
 import { Character } from './model/character.js';
 import { initiateCollide } from './utils/collision-helper.js';
@@ -35,6 +36,11 @@ const getDelta = () => {
   return delta;
 };
 
+export const startGame = () => {
+  const audio = AudioData.getInstance();
+  audio.play(AudioData.MUSIC_VILLAGE, true);
+};
+
 const renderBackBackground = () => {
   ctx.drawImage(outsideImage, -100, -100, 1920, 1000);
 };
@@ -56,6 +62,7 @@ initiateCollide();
 
 image.onload = () => {
   window.addEventListener('keydown', (e) => {
+    e.preventDefault();
     keys[e.key.toLowerCase()] = true;
   });
   window.addEventListener('keyup', (e) => {

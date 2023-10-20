@@ -1,14 +1,11 @@
-export class Audio {
-  static instance;
+export class AudioData {
+  static instance = null;
   static MUSIC_VILLAGE;
 
   constructor() {
     this.audios = [];
-    this.setListener();
     this.volume = 0;
     this.addAllAudio();
-    this.volumeRange = $('#volumeRange');
-    this.setVolume(this.getValueFromRange());
   }
 
   getElement(id, asset) {
@@ -16,7 +13,11 @@ export class Audio {
   }
 
   addElement(el) {
-    $('#root-audio').append(el);
+    const element = document.createElement('div');
+    element.innerHTML = el;
+
+    const audioDiv = document.getElementById('root-audio');
+    audioDiv.appendChild(element);
   }
 
   addAllAudio() {
@@ -44,7 +45,7 @@ export class Audio {
 
   static getInstance = () => {
     if (this.instance == null) {
-      this.instance = new MyAudio();
+      this.instance = new AudioData();
     }
     return this.instance;
   };
@@ -52,7 +53,6 @@ export class Audio {
   play(state, loop = true) {
     this.audios[state].currentTime = 0;
     this.audios[state].play();
-    this.audios[state].volume = this.getValueFromRange();
     this.audios[state].loop = loop;
   }
 }

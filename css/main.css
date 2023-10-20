@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #4B4B4B;
 }
 
 .w-screen {
@@ -150,4 +151,16 @@ border: 3px solid #ffffff;
 
 .beach-list .left-inside{
   width: 400px;
+}
+
+.information .container {
+  padding: 100px 0px;
+}
+
+.last-div{
+  height: 30px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
