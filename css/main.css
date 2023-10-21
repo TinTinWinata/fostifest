@@ -3,8 +3,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #4B4B4B;
-  font-family: sans-serif;
+  color: rgb(21, 21, 21);
+}
+
+
+.inter{
+  font-family: 'Inter', sans-serif;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.pixel {
+  font-family: 'Pixelify Sans', sans-serif;
 }
 
 .consolas {
@@ -70,6 +82,10 @@
   z-index: 5;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .w-h-full {
   width: 100%;
   height: 100%;
@@ -113,6 +129,10 @@ border: 3px solid #ffffff;
   width: 40%;
 }
 
+#beachRoot {
+  width: 60%;
+}
+
 .beach-list .img-container img{
   width: 100%;
   height: 300px;
@@ -134,15 +154,34 @@ border: 3px solid #ffffff;
   border-radius: 30px;
 }
 
-.beach-list .title{
+.beach-list-container .title{
   font-weight: 700;
-  font-size: 24px;
+  font-size: 60px;
+  width: 70%;
+}
+
+.beach-list img{
+  width: 400px;
+  height: 250px;
+  border-radius: 30px;
+}
+
+.beach-list-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 200px 0px;
 }
 
 .beach-list .content {
+  opacity: 75%;
+  color: rgb(99, 99, 99);
+  margin-top: 10px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 2rem;
 }
+
 
 .beach-list .middle{
   justify-content: center;
@@ -152,24 +191,34 @@ border: 3px solid #ffffff;
 
 .beach-list .left-container {
   top: 60px;
+  height: 100%;
 } 
+
+
+
+.beach-list .left-container .sticky {
+  position: sticky;
+  top: 40px;
+}
 
 .beach-list .middle .line{
   width: 1px;
-  height: 80%;
+  height: 60%;
   background-color: gray;
-  opacity: 50%;
+  opacity: 20%;
 }
 
 .beach-list .left-inside{
   width: 400px;
 }
 
-.information  p{
+.information p{
   font-size: 20px;
-  line-height: 25px;
-  /* font-weight: 500; */
+  line-height: 30px;
+  font-weight: 300;
 }
+
+
 
 .information .container {
   padding: 100px 0px;
@@ -183,3 +232,50 @@ border: 3px solid #ffffff;
   cursor: pointer;
 }
 
+.hardware{
+  top: -100px;
+  transition: all 1s ease;
+}
+
+.hardware button {
+  margin-left: 10px;
+  padding: 5px 30px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hardware button:hover {
+  background-color: rgb(30, 30, 30);
+}
+
+.hardware .bulb {
+  width: 20px;
+}
+.quote {
+  width: 40%;
+  margin-top: 10px;
+  opacity: 80%;
+  color: rgb(84, 84, 84);
+}
+
+.link {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.link svg{
+  transition: all 0.2s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
+}
+
+.link svg:hover{
+  top: -5px;
+}

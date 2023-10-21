@@ -19,6 +19,7 @@
   cursor:pointer;
   transition: all 0.5s ease;
   color: black;
+  font-size: 20px;
   padding: 15px 70px;
   background-color: white;
   border-radius: 40px;
@@ -112,3 +113,14 @@
   font-weight: 500;
   left: 85px;
 }
+
+/* Change Bootstrap Next and Prev Icon */
+.carousel-control-prev-icon {
+  margin-top: 30px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%6e340e' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+   margin-top: 30px;
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%6e340e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+ }

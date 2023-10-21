@@ -89,8 +89,8 @@ export class Trigger {
     const items = document.getElementsByClassName('carousel-item');
     const lengthItem = items.length;
     let activeIdx = -1; // Default Value
-    controlNext.addEventListener('click', () => {
-      // Next
+
+    const next = () => {
       Trigger.currentIndex += 1;
       activeIdx = Trigger.currentIndex % lengthItem;
 
@@ -98,9 +98,8 @@ export class Trigger {
         items[i].classList.remove('active');
       }
       items[activeIdx].classList.add('active');
-    });
-    controlPrev.addEventListener('click', () => {
-      // Previous
+    };
+    const prev = () => {
       Trigger.currentIndex -= 1;
       if (Trigger.currentIndex < 0) {
         Trigger.currentIndex += lengthItem;
@@ -110,7 +109,14 @@ export class Trigger {
         items[i].classList.remove('active');
       }
       items[activeIdx].classList.add('active');
+    };
+    document.addEventListener('keydown', (e) => {
+      const key = e.key.toLowerCase();
+      if (key === 'a' || key === 'arrowleft') next();
+      if (key === 'd' || key === 'arrowright') prev();
     });
+    controlNext.addEventListener('click', next);
+    controlPrev.addEventListener('click', prev);
   }
 
   show() {

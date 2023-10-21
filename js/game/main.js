@@ -44,8 +44,8 @@ const tr2 = new Trigger(
   'Trigger Garden',
   [
     '/assets/komodo.png',
-    '/assets/taman-mini-indonesia-indah.jpeg',
-    '/assets/taman-nasional-ujung-kulon.webp',
+    '/assets/taman-mini-indonesia-indah-pixelated.png',
+    '/assets/taman-nasional-ujung-kolon-pixelated.png',
   ],
   char,
   'Indonesia memiliki taman-taman yang indah, seperti Taman Nasional Komodo, yang punya kadal komodo unik. Ada juga Taman Nasional Ujung Kulon yang melindungi badak Jawa langka, serta Taman Mini Indonesia Indah (TMII) di Jakarta yang menampilkan miniatur budaya Indonesia. Semua taman ini adalah tempat yang menakjubkan untuk menjelajahi keindahan alam dan budaya Indonesia.',
@@ -55,9 +55,9 @@ const tr2 = new Trigger(
 const tr3 = new Trigger(
   'Trigger Beach',
   [
-    '/assets/pantai-nusa-dua.jpg',
-    '/assets/pantai-pink.jpg',
-    '/assets/pantai-parangtritis.jpg',
+    '/assets/pantai-nusa-dua-pixelated.png',
+    '/assets/pantai-pink-pixelated.png',
+    '/assets/pantai-parangtritis-pixelated.png',
   ],
   char,
   'Indonesia punya banyak pantai cantik. Misalnya, Pantai Nusa Dua di Bali dengan pasir putih dan resor mewahnya. Ada juga Pantai Pink di Pulau Komodo yang punya pasir merah muda, serta Pantai Parangtritis di Yogyakarta yang punya ombak besar. Semua pantai ini punya keindahan uniknya sendiri.',
@@ -67,9 +67,9 @@ const tr3 = new Trigger(
 const tr4 = new Trigger(
   'Trigger Indonesia House',
   [
-    '/assets/rumah-gadang.jpg',
-    '/assets/rumah-toraja.jpg',
-    '/assets/rumah-joglo.jpg',
+    '/assets/rumah-gadang-pixelated.png',
+    '/assets/rumah-toraja-pixelated.png',
+    '/assets/rumah-joglo-pixelated.png',
   ],
   char,
   'Indonesia memiliki beragam rumah tradisional yang unik. Misalnya, Rumah Gadang di Sumatera Barat, Rumah Toraja dengan atap perahu di Sulawesi Selatan, dan Rumah Joglo di Jawa Tengah. Setiap rumah ini memancarkan karakteristik budaya yang khas.',
@@ -79,9 +79,9 @@ const tr4 = new Trigger(
 const tr5 = new Trigger(
   'Trigger Home',
   [
-    '/assets/museum-gajah.jpg',
-    '/assets/museum-bali.jpg',
-    '/assets/museum-wayang.jpg',
+    '/assets/musem-gajah-pixelated.png',
+    '/assets/museum-bali-pixelated.png',
+    '/assets/museum-wayang-pixelated.png',
   ],
   char,
   'Indonesia membanggakan berbagai macam museum yang unik dan menarik. Misalnya, Museum Nasional Indonesia di Jakarta, yang memiliki koleksi yang sangat kaya tentang budaya, sejarah, dan seni Indonesia. Di Denpasar, Bali, terdapat Museum Bali yang memamerkan seni dan budaya khas pulau tersebut. Setiap museum ini adalah tempat yang luar biasa untuk memahami kekayaan budaya Indonesia.',

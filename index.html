@@ -13,6 +13,14 @@
     <!-- Icon -->
     <link rel="icon" href="./assets/logo.png" />
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Bootstrap CDN -->
     <link
       rel="stylesheet"
@@ -27,19 +35,45 @@
     ></script>
 
     <!-- Custom Script -->
+
     <script type="module" src="./js/game/main.js" defer></script>
     <script type="module" src="./js/jumbotron.js" defer></script>
     <script src="./js/beach.js" defer></script>
+    <script src="./js/hardware.js" defer></script>
   </head>
 
-  <body>
+  <body class="inter">
+    <!-- Hardware Acceleration -->
+    <div
+      id="hardware"
+      class="position-fixed d-flex gap-2 justify-content-center align-items-center w-full hardware p-3 bg-white z-10 inter"
+    >
+      <div class="center bulb">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class=""
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+          />
+        </svg>
+      </div>
+      <div class="">Enable Hardware Acceleration for Better Experiences</div>
+      <button id="okayBtn">Okay!</button>
+    </div>
     <!-- Jumbotron Section -->
     <section id="jumbotron" class="h-screen w-full position-relative">
       <div class="game-hider bottom-content z-3">
         <div
           class="d-flex h-fit w-full align-items-center justify-content-between"
         >
-          <div id="play-game-btn">Play Game</div>
+          <div id="play-game-btn">PLAY GAME</div>
           <div class="loading">
             <div id="bar" class="bar"></div>
           </div>
@@ -156,7 +190,7 @@
             height="350"
           />
           <div class="text-center mt-3 d-flex gap-3 flex-column">
-            <h2 class="text-white fw-bold">Cinta Budaya Indonesia</h2>
+            <h1 class="display-5 text-white fw-bold">Cinta Budaya Indonesia</h1>
             <p class="text-white">
               Kebudayaan Indonesia adalah warisan tak ternilai yang telah
               diwariskan oleh para leluhur kita. Setiap motif batik, tari, lagu,
@@ -171,18 +205,19 @@
     </section>
 
     <section
-      class="h-screen w-full container gap-5 d-flex h-fit justify-content-center beach-list"
+      class="h-screen inter w-full container gap-5 d-flex h-fit justify-content-center beach-list"
     >
-      <div id="beach-list-left" class="d-block h-fit left">
-        <div class="left-container to-be-fixed">
-          <div class="d-flex gap-5">
+      <div id="beach-list-left" class="position-relative d-block left">
+        <div class="position-absolute left-container to-be-fixed">
+          <div class="sticky d-flex gap-5">
+            <!-- <img class="flower" src="/assets/flower.gif" alt="" /> -->
             <div class="left-inside d-flex flex-column gap-3">
-              <div class="date">20 - 24 December - 4 Day 3 Night</div>
+              <div class="date">Indonesia</div>
               <div class="title">Journey Sumba Island</div>
               <div class="content">
-                The 4 Days 3 Night Sumba Trip Package is ready to go every day.
-                Starting from West Sumba to East Sumba. Then it recommended that
-                you book.
+                Setiap tempat di Indonesia memiliki ciri khasnya masing-masing.
+                Keindahan alam, budaya, dan warisan sejarah yang beragam
+                membuatnya istimewa.
               </div>
               <div class="button">Submit</div>
               <div class="img-container w-fit rounded-5">
@@ -198,7 +233,6 @@
       <!-- To Be Long Text -->
       <div id="beachRoot" class="right"></div>
     </section>
-    <section class="h-screen"></section>
     <section
       id="last-section"
       class="container h-screen d-flex justify-content-between flex-column"
@@ -215,8 +249,12 @@
           alt=""
         />
         <div class="display-5 mt-2 fw-bold">Contact Me</div>
+        <p class="text-center quote">
+          "Every line of code you write is a step towards building a brighter
+          digital future."
+        </p>
         <div class="d-flex gap-3 mt-3">
-          <div class="cursor-pointer">
+          <div class="link cursor-pointer">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -231,7 +269,7 @@
               ></path>
             </svg>
           </div>
-          <div class="cursor-pointer">
+          <div class="link cursor-pointer">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -246,7 +284,7 @@
               ></path>
             </svg>
           </div>
-          <div class="cursor-pointer">
+          <div class="link cursor-pointer">
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -267,7 +305,7 @@
         <hr />
         <div class="d-flex justify-content-between">
           <div class="">©️2023 Justine Winata</div>
-          <div class="">Solo Leveling</div>
+          <div class="">Bina Nusantara University</div>
         </div>
       </div>
     </section>
