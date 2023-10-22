@@ -28,8 +28,8 @@ outsideImage.src = '../../assets/minecraft-loading.webp';
 const playerImage = new Image();
 playerImage.src = '../assets/Character/Character.png';
 
-const foregroundImage = new Image();
-foregroundImage.src = '../tiles/Foreground.png';
+// const foregroundImage = new Image();
+// foregroundImage.src = '../tiles/Foreground.png';
 
 const char = new Character(playerImage, true);
 const tr1 = new Trigger(
@@ -88,10 +88,10 @@ const tr5 = new Trigger(
   ['Gajah', 'Bali', 'Wayang']
 );
 const bg = new Background(image, offsetX, offsetY);
-const fg = new Background(foregroundImage, offsetX, offsetY);
+// const fg = new Background(foregroundImage, offsetX, offsetY);
 
 moveable.push(bg);
-moveable.push(fg);
+// moveable.push(fg);
 closeDialog();
 
 const getDelta = () => {
@@ -121,7 +121,7 @@ const render = () => {
     renderBackBackground();
     bg.render();
     char.render();
-    fg.render();
+    // fg.render();
     tr1.render();
     tr2.render();
     tr3.render();
@@ -135,7 +135,19 @@ const render = () => {
 
 initiateCollide();
 
-image.onload = () => {
+let images = [image, playerImage];
+let countLoadedImage = 0;
+
+images.forEach((image) => {
+  image.onload = () => {
+    countLoadedImage += 1;
+    if (countLoadedImage === images.length) {
+      loadGame();
+    }
+  };
+});
+
+const loadGame = () => {
   window.addEventListener('keydown', (e) => {
     if (Setting.gameIsStart) {
       e.preventDefault();
