@@ -6,6 +6,7 @@ import { moveable } from '../utils/setting.js';
 export class Trigger {
   static active = false; // Flag to track if a trigger is currently active.
   static currentIndex = 0; // Index of the current trigger.
+  static lengthItem = 0; // NUmber of the length images
   static clickEventAlreadyAdd = false; // Flag to track if a trigger is already active.
   constructor(dataName, images, player, content, texts) {
     this.collideMap = []; // Array to store collision map data.
@@ -101,13 +102,13 @@ export class Trigger {
     const controlNext = document.getElementById('carousel-control-next');
     const controlPrev = document.getElementById('carousel-control-prev');
     const items = document.getElementsByClassName('carousel-item');
-    const lengthItem = items.length;
+    Trigger.lengthItem = items.length;
     let activeIdx = -1;
 
     const next = () => {
       Trigger.currentIndex += 1;
-      activeIdx = Trigger.currentIndex % lengthItem;
-      for (let i = 0; i < lengthItem; i++) {
+      activeIdx = Trigger.currentIndex % Trigger.lengthItem;
+      for (let i = 0; i < Trigger.lengthItem; i++) {
         items[i].classList.remove('active');
       }
       items[activeIdx].classList.add('active');
@@ -116,22 +117,21 @@ export class Trigger {
     const prev = () => {
       Trigger.currentIndex -= 1;
       if (Trigger.currentIndex < 0) {
-        Trigger.currentIndex += lengthItem;
+        Trigger.currentIndex += Trigger.lengthItem;
       }
-      activeIdx = Trigger.currentIndex % lengthItem;
-      for (let i = 0; i < lengthItem; i++) {
+      activeIdx = Trigger.currentIndex % Trigger.lengthItem;
+      for (let i = 0; i < Trigger.lengthItem; i++) {
         items[i].classList.remove('active');
       }
       items[activeIdx].classList.add('active');
     };
 
-    document.addEventListener('keydown', (e) => {
-      const key = e.key.toLowerCase();
-      if (key === 'a' || key === 'arrowleft') next();
-      if (key === 'd' || key === 'arrowright') prev();
-    });
-
     if (!Trigger.clickEventAlreadyAdd) {
+      document.addEventListener('keydown', (e) => {
+        const key = e.key.toLowerCase();
+        if (key === 'a' || key === 'arrowleft') next();
+        if (key === 'd' || key === 'arrowright') prev();
+      });
       controlNext.addEventListener('click', next);
       controlPrev.addEventListener('click', prev);
       Trigger.clickEventAlreadyAdd = true;

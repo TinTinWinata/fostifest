@@ -10,7 +10,6 @@ const preloadImags = (srcs) => {
 preloadImags([
   './assets/logo.png',
   '/assets/dialog.png',
-  '/assets/beach.jpg',
   '/assets/wallpaper_fixed.png',
   '/assets/indonesia-3.png',
   '/assets/justine-winata.jpeg',

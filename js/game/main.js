@@ -56,7 +56,7 @@ preloadImage('../assets/Character/Character.png', (img) => {
   // Create Trigger instances with associated data.
   const tr1 = new Trigger(
     'Trigger Lubang Buaya',
-    ['/assets/g30spki.webp'],
+    ['/assets/g30spki.png'],
     char,
     'Tentu, Peristiwa Lubang Buaya adalah sebuah peristiwa penting di Indonesia pada tanggal 30 September 1965. Pada hari itu, sekelompok anggota militer dan pemuda mencoba menggulingkan pemerintahan Presiden Sukarno. Peristiwa ini berujung pada eksekusi beberapa anggota militer di Lubang Buaya, Jakarta. Peristiwa ini membuka jalan menuju pemerintahan baru di bawah Jenderal Soeharto dan memiliki dampak besar pada sejarah politik dan ekonomi Indonesia.',
     ['G30 SPKI']
