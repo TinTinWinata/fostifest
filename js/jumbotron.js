@@ -3,7 +3,16 @@ import { startGame } from './game/main.js';
 const playBtnDiv = document.getElementById('play-game-btn');
 const gameHider = document.getElementsByClassName('game-hider');
 
+const isMobileAndPotrait = () =>
+  window.matchMedia('(orientation: portrait)').matches &&
+  window.mobileAndTabletCheck();
+
 playBtnDiv.addEventListener('click', () => {
+  if (isMobileAndPotrait()) {
+    const error = document.getElementById('errorMessage');
+    error.style.opacity = '100%';
+    return;
+  }
   for (let i = 0; i < gameHider.length; i++) {
     gameHider[i].style.display = 'none';
   }

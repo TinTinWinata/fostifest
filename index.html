@@ -73,7 +73,12 @@
         <div
           class="bottom-content-inside h-fit w-full align-items-center justify-content-between"
         >
-          <div id="play-game-btn">PLAY GAME</div>
+          <div class="">
+            <div id="errorMessage" class="mb-2 text-center text-white">
+              Please change your mobile orientation to landscape!
+            </div>
+            <div id="play-game-btn" class="center">PLAY GAME</div>
+          </div>
           <div class="loading">
             <div id="bar" class="bar"></div>
           </div>
@@ -89,14 +94,14 @@
           id="game-joypad"
           class="flex-column align-items-center justify-content-center gap-2"
         >
-          <button class="pad" id="game-joypad-top"></button>
-          <div class="h-100 w-100 d-flex bg-red-300 gap-2">
+          <button class="hide-game pad" id="game-joypad-top"></button>
+          <div class="hide-game h-100 w-100 d-flex bg-red-300 gap-2">
             <button class="pad" id="game-joypad-left"></button>
             <button class="pad" id="game-joypad-right"></button>
           </div>
-          <button class="pad" id="game-joypad-down"></button>
+          <button class="hide-game pad" id="game-joypad-down"></button>
         </div>
-        <div id="game-hud">
+        <div id="game-hud" class="hide-game">
           <svg
             id="fullscreen"
             stroke="#000000"

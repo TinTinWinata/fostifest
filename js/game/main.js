@@ -109,6 +109,16 @@ preloadImage('../assets/Character/Character.png', (img) => {
 });
 const bg = new Background(image, offsetX, offsetY);
 
+const toggleHud = (show = false) => {
+  const divs = document.getElementsByClassName('hide-game');
+  for (let i = 0; i < divs.length; i++) {
+    const div = divs[i];
+    console.log(div);
+    div.style.opacity = show ? '100%' : '0%';
+  }
+};
+toggleHud(false);
+
 moveable.push(bg);
 closeDialog();
 
@@ -120,6 +130,7 @@ const getDelta = () => {
 };
 
 export const startGame = () => {
+  toggleHud(true);
   const audio = AudioData.getInstance();
   audio.play(AudioData.MUSIC_VILLAGE, true);
   dialog(

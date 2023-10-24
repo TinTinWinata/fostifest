@@ -116,6 +116,12 @@
   height: 200px;
 }
 
+#errorMessage{ 
+  transition: all 0.5s ease;
+  opacity: 0%;
+  font-size: 13px;
+}
+
 #game-joypad .pad:active{
   background-color: rgba(0, 0, 0, 0.493);
 }
@@ -172,6 +178,10 @@
   left: 85px;
 }
 
+
+.game-hider .mobile-view{
+  display: none;
+}
 .bottom-content-inside{
   display: flex;
 }
@@ -214,6 +224,7 @@
     height: 100%;
   }
   .game-hider .mobile-view{
+    display: block;
     background-color: black;
     position: absolute;
     left: 0;
@@ -230,7 +241,7 @@
   }
   
   .bottom-content {
-    bottom: 5%;
+    bottom: 15%;
   }
 
   .carousel-control-next, .carousel-control-prev {
