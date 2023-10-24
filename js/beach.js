@@ -38,22 +38,22 @@ const datas = [
     img: '/assets/uluwatu.jpg',
   },
 ];
-
 // Get references to HTML elements by their IDs.
 const left = document.getElementById('beach-list-left');
 
 const lastSection = document.getElementById('last-section');
-const beachRouteDiv = document.getElementById('beachRoot');
+const beachRootDiv = document.getElementById('beachRoot');
 const toBeFixed = document.getElementsByClassName('to-be-fixed');
+const navigationRootDiv = document.getElementById('navigationRoot');
 
-// Iterate through the `datas` array to create HTML elements and append them to `beachRouteDiv`.
-datas.forEach((data) => {
+// Iterate through the `datas` array to create HTML elements and append them to `beachRootDiv`.
+datas.forEach((data, index) => {
   // Create a new <div> element with specific classes and inner HTML based on the data.
   const newDiv = document.createElement('div');
   newDiv.classList.add('d-flex', 'flex-column', 'gap-3');
   newDiv.innerHTML = `
-  <div class="beach-list-container">
-    <div class="date">
+  <div  class="beach-list-container">
+    <div id="beach-${index}" class="date">
     ${data.date}
     </div>
     <div class="title">
@@ -66,6 +66,34 @@ datas.forEach((data) => {
   </div>
   `;
 
-  // Append the newly created <div> to the `beachRouteDiv`.
-  beachRouteDiv.appendChild(newDiv);
+  const newRootDiv = document.createElement('div');
+  newRootDiv.innerHTML = `
+  <div class="navigation-text"  id="navigation-text-${index}" onclick="scrollToSection('beach-${index}')">
+    ${data.title}
+  </div>
+  `;
+
+  // Append the newly created <div> to the `beachRootDiv`.
+  beachRootDiv.appendChild(newDiv);
+
+  // Append the newly root div created <div> to the `navigationRootDiv`.
+  navigationRootDiv.appendChild(newRootDiv);
 });
+
+// Intiiate current index
+let currentIndex = Math.floor(datas.length / 2);
+
+const toggleTransition = () => {
+  const navigationsDiv = document.getElementsByClassName('navigation-text');
+  for (let i = 0; i < navigationsDiv.length; i++) {
+    navigationsDiv[i].classList.remove('active');
+  }
+  navigationsDiv[currentIndex].classList.add('active');
+
+  currentIndex = (currentIndex + 1) % datas.length;
+};
+
+toggleTransition();
+setInterval(() => {
+  toggleTransition();
+}, 10000);

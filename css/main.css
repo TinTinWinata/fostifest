@@ -289,12 +289,13 @@ border: 3px solid #ffffff;
   left:0;
 }
 
-
-
 .link svg:hover{
   top: -5px;
 }
 
+.bina-nusantara-university{
+  text-align: right;
+}
 
 
 /* Section Two */

@@ -4,11 +4,16 @@
 const hardwareDiv = document.getElementById('hardware');
 const okayBtn = document.getElementById('okayBtn');
 
+let isOpenHardware = false;
+
 const closeHardware = () => {
+  isOpenHardware = false;
   hardwareDiv.style.top = '-100px';
 };
 
 const openHardware = () => {
+  if (isOpenHardware) return;
+  isOpenHardware = true;
   hardwareDiv.style.top = 0;
   // If already 3 seconds when opening close the hardware notification
   setTimeout(closeHardware, 3000);
