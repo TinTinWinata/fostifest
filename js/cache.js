@@ -19,7 +19,7 @@ preloadImags([
   '/assets/candi-borobudur.jpg',
   '/assets/taman-nasional-komodo.jpg',
   '/assets/uluwatu.jpg',
-  '/assets/g30spki.webp',
+  '/assets/g30spki.png',
   '/assets/komodo.png',
   '/assets/taman-mini-indonesia-indah-pixelated.png',
   '/assets/taman-nasional-ujung-kolon-pixelated.png',
