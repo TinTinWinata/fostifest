@@ -14,6 +14,7 @@ import ctx, {
   Setting,
   canvas,
   keys,
+  moveable,
   offsetX,
   offsetY,
 } from './utils/setting.js';
@@ -36,9 +37,6 @@ let lastDate = new Date();
 // Load images.
 const image = new Image();
 image.src = '../tiles/SecondMap.png';
-
-const outsideImage = new Image();
-outsideImage.src = '../../assets/minecraft-loading.webp';
 
 let char = null;
 let trs = [];
@@ -113,6 +111,7 @@ preloadImage('../assets/Character/Character.png', (img) => {
 
 // Create a Background instance.
 const bg = new Background(image, offsetX, offsetY);
+moveable.push(bg);
 
 // Function to toggle the HUD (Hide/Show).
 const toggleHud = (show = false) => {
@@ -153,16 +152,10 @@ export const startGame = () => {
   Setting.gameIsStart = true;
 };
 
-// Function to render the background.
-const renderBackBackground = () => {
-  ctx.drawImage(outsideImage, -100, -100, 1920, 1000);
-};
-
 // Main render loop.
 const render = () => {
   temp += getDelta();
   if (temp >= 1 / FPS) {
-    renderBackBackground();
     bg.render();
     char.render();
     trs.forEach((tr) => tr.render());

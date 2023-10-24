@@ -54,6 +54,7 @@
 }
 
 #gameDialog{
+  display: none;
   padding: 2rem 3rem;
   color: black;
   position: absolute;
