@@ -1,3 +1,6 @@
+// The code dynamically generates a list of beach-related information based on the data in `datas`.
+
+// An array of data representing different beach-related information.
 const datas = [
   {
     date: 'Pantai Tropis Terindah',
@@ -36,13 +39,16 @@ const datas = [
   },
 ];
 
+// Get references to HTML elements by their IDs.
 const left = document.getElementById('beach-list-left');
 
 const lastSection = document.getElementById('last-section');
 const beachRouteDiv = document.getElementById('beachRoot');
 const toBeFixed = document.getElementsByClassName('to-be-fixed');
 
+// Iterate through the `datas` array to create HTML elements and append them to `beachRouteDiv`.
 datas.forEach((data) => {
+  // Create a new <div> element with specific classes and inner HTML based on the data.
   const newDiv = document.createElement('div');
   newDiv.classList.add('d-flex', 'flex-column', 'gap-3');
   newDiv.innerHTML = `
@@ -59,30 +65,7 @@ datas.forEach((data) => {
     </div>
   </div>
   `;
+
+  // Append the newly created <div> to the `beachRouteDiv`.
   beachRouteDiv.appendChild(newDiv);
 });
-
-window.onscroll = () => {
-  const scrollTop = window.scrollY;
-  const viewportHeight = window.innerHeight;
-  const contentHeight = left.getBoundingClientRect().height;
-  const contentTop = left.getBoundingClientRect().top + window.pageYOffset;
-  // console.log('Scroll : ', scrollTop);
-  // console.log('Content Top : ', contentTop);
-  // if (scrollTop >= contentHeight - viewportHeight + contentTop) {
-  //   console.log('melebihi');
-  // }
-  const gone =
-    lastSection.getBoundingClientRect().top -
-    lastSection.getBoundingClientRect().height;
-  // if (scrollTop >= contentTop - 60 && gone > 0) {
-  //   for (let i = 0; i < toBeFixed.length; i++) {
-  //     toBeFixed[i].style.position = 'fixed';
-  //   }
-  // } else {
-  //   for (let i = 0; i < toBeFixed.length; i++) {
-  //     toBeFixed[i].style.position = '';
-  //   }
-  // }
-  // const contentHeight =
-};

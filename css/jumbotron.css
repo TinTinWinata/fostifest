@@ -279,7 +279,7 @@
   }
  }
 
- @media screen and (orientation:landscape) {
+ @media screen and (orientation:landscape) and (max-width: 700px) {
   .carousel-image {
     margin-left: 2px;
     border-radius: 10px;
@@ -291,4 +291,4 @@
     left: 40px;
     top: -55px;
   }
-  }
+}

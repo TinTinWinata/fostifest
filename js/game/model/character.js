@@ -17,22 +17,23 @@ import { Trigger } from './trigger.js';
 
 export class Character {
   constructor(sprite, moveMoveable) {
-    this.sprite = sprite; // Eiger Loading Purposes
-    this.spriteIdx = 0;
-    this.totalDivided = 4;
-    this.w = sprite.width / this.totalDivided;
-    this.h = sprite.height / this.totalDivided;
-    this.speed = CHARACTER_SPEED;
+    this.sprite = sprite; // The character's sprite image.
+    this.spriteIdx = 0; // Index for sprite animation.
+    this.totalDivided = 4; // Number of divisions in the sprite image.
+    this.w = sprite.width / this.totalDivided; // Width of a sprite frame.
+    this.h = sprite.height / this.totalDivided; // Height of a sprite frame.
+    this.speed = CHARACTER_SPEED; // Character's movement speed.
     this.offsetCheck = 1;
-    this.moveMoveable = moveMoveable;
-    this.x = canvas.width / 2 - this.w / 2;
-    this.y = canvas.height / 2 - this.h / 2;
-    this.facing = MOVEMENT_DOWN;
-    this.moving = false;
-    this.spriteSpeed = 10;
-    this.tempSpriteSpeed = 0;
+    this.moveMoveable = moveMoveable; // Boolean to indicate whether the character can move moveable object like foreground or background
+    this.x = canvas.width / 2 - this.w / 2; // Initial X-coordinate.
+    this.y = canvas.height / 2 - this.h / 2; // Initial Y-coordinate.
+    this.facing = MOVEMENT_DOWN; // Initial facing direction.
+    this.moving = false; // Flag to track if the character is moving.
+    this.spriteSpeed = 10; // Speed of sprite animation.
+    this.tempSpriteSpeed = 0; // Temporary counter for sprite animation.
   }
 
+  // Get the position and dimensions of the character's collision collider.
   getColliderPosition() {
     const resize = 0.5;
     const marginTop = 0.2;
@@ -43,6 +44,7 @@ export class Character {
     return { x, y, w, h };
   }
 
+  // Check if the character's collision collider collides with an obstacle.
   isCollideCollider(e) {
     const marginBottom = 0.1;
     const { x, y, w, h } = this.getColliderPosition();
@@ -67,10 +69,8 @@ export class Character {
     return true;
   }
 
+  // Move the character by a specified increment.
   move(incX, incY) {
-    // No need to move character
-    // this.x += incX;
-    // this.y += incY;
     this.moving = true;
     if (this.moveMoveable) {
       moveable.forEach((moveable) => {
@@ -79,6 +79,7 @@ export class Character {
     }
   }
 
+  // Check and handle character movement based on the input direction.
   checkMove(e) {
     this.facing = e;
     switch (e) {
@@ -98,6 +99,7 @@ export class Character {
     this.moving = false;
   }
 
+  // Logic for sprite animation and character speed.
   logic() {
     this.tempSpriteSpeed += 1;
     if (this.tempSpriteSpeed >= this.spriteSpeed) {
@@ -120,6 +122,7 @@ export class Character {
     }
   }
 
+  // Calculate the Y position in the sprite image based on the character's facing direction.
   getSourceYPosition() {
     switch (this.facing) {
       case MOVEMENT_UP:
@@ -133,6 +136,7 @@ export class Character {
     }
   }
 
+  // Determine the source position in the sprite image for rendering.
   getSourcePosition() {
     if (this.moving) {
       this.spriteIdx %= 4;
@@ -142,6 +146,7 @@ export class Character {
     }
   }
 
+  // Render the character on the canvas.
   render() {
     this.logic();
     const { x, y } = this.getSourcePosition();
