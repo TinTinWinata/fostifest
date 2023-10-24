@@ -6,6 +6,7 @@ import { moveable } from '../utils/setting.js';
 export class Trigger {
   static active = false; // Flag to track if a trigger is currently active.
   static currentIndex = 0; // Index of the current trigger.
+  static clickEventAlreadyAdd = false; // Flag to track if a trigger is already active.
   constructor(dataName, images, player, content, texts) {
     this.collideMap = []; // Array to store collision map data.
     this.dataName = dataName; // Name of the trigger data layer.
@@ -77,6 +78,7 @@ export class Trigger {
     const carouselContainer = document.getElementById('gameCarousel');
     carouselContainer.style.display = 'none';
     blackModal.style.display = 'none';
+    Trigger.currentIndex = 0;
     Trigger.active = false;
   };
 
@@ -105,7 +107,6 @@ export class Trigger {
     const next = () => {
       Trigger.currentIndex += 1;
       activeIdx = Trigger.currentIndex % lengthItem;
-
       for (let i = 0; i < lengthItem; i++) {
         items[i].classList.remove('active');
       }
@@ -130,8 +131,11 @@ export class Trigger {
       if (key === 'd' || key === 'arrowright') prev();
     });
 
-    controlNext.addEventListener('click', next);
-    controlPrev.addEventListener('click', prev);
+    if (!Trigger.clickEventAlreadyAdd) {
+      controlNext.addEventListener('click', next);
+      controlPrev.addEventListener('click', prev);
+      Trigger.clickEventAlreadyAdd = true;
+    }
   }
 
   // Show the trigger dialog and carousel.
@@ -139,10 +143,8 @@ export class Trigger {
     Trigger.active = true;
     const carouselContainer = document.getElementById('gameCarousel');
     const blackModal = document.getElementById('black-modal');
-
     carouselContainer.style.display = 'block';
     blackModal.style.display = 'block';
-
     blackModal.addEventListener('click', Trigger.hide);
     Trigger.addEvent();
   }

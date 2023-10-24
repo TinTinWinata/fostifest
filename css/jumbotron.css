@@ -1,3 +1,9 @@
+canvas{
+  background: black;
+}
+
+
+
 #jumbotron .background{
   background-color: black;
   opacity: 0.3;
@@ -95,6 +101,7 @@
 }
 
 #gameCarousel {
+  display: none;
 }
 
 #carousel-root{
@@ -199,6 +206,7 @@
  }
 
  @media only screen and (max-width: 700px) {
+
   .jumbotron-title{ 
     display: none;
   }
@@ -280,7 +288,27 @@
   }
  }
 
- @media screen and (orientation:landscape) and (max-width: 700px) {
+ #errorMessage{
+  display: block;
+ }
+ @media screen and (orientation: landscape){
+  #errorMessage{
+    display: none;
+  }
+
+ }
+
+ @media screen and (orientation:landscape) and (max-width: 1000px) {
+  .left-text {
+    width: 50%;
+    height: 50%;
+    bottom: 10%;
+    left: 4%;
+  }
+  #play-game-btn{
+    font-size: 10px;
+    padding: 10px 30px;
+  }
   .carousel-image {
     margin-left: 2px;
     border-radius: 10px;

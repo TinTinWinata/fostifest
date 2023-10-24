@@ -4,6 +4,7 @@ import { startGame } from './game/main.js';
 // Get the paly button div and game hider div
 const playBtnDiv = document.getElementById('play-game-btn');
 const gameHider = document.getElementsByClassName('game-hider');
+const errorDiv = document.getElementById('errorMessage');
 
 // Function to check if the device is in portrait orientation and is a mobile or tablet
 const isMobileAndPortrait = () =>
@@ -15,8 +16,7 @@ playBtnDiv.addEventListener('click', () => {
   // Check if the device is in portrait orientation and is a mobile or tablet
   if (isMobileAndPortrait()) {
     // Display an error message if conditions are met
-    const error = document.getElementById('errorMessage');
-    error.style.opacity = '100%';
+    errorDiv.style.opacity = '100%';
     return;
   }
 

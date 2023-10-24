@@ -72,14 +72,12 @@
     <section id="jumbotron" class="h-screen w-full position-relative">
       <div class="game-hider bottom-content z-3">
         <div
-          class="bottom-content-inside h-fit w-full align-items-center justify-content-between"
+          class="bottom-content-inside d-flex h-fit w-full align-items-center justify-content-between"
         >
-          <div class="">
-            <div id="errorMessage" class="mb-2 text-center text-white">
-              Please change your mobile orientation to landscape!
-            </div>
-            <div id="play-game-btn" class="center">PLAY GAME</div>
+          <div id="errorMessage" class="mb-2 text-center text-white">
+            Please change your mobile orientation to landscape!
           </div>
+          <div id="play-game-btn" class="center">PLAY GAME</div>
           <div class="loading">
             <div id="bar" class="bar"></div>
           </div>
@@ -147,7 +145,7 @@
             <h5 id="gameDialogContent" class="text-dialog consolas">Test</h5>
           </div>
         </div>
-        <div style="display: none" id="gameCarousel" class="z-5 abs-center">
+        <div id="gameCarousel" class="z-5 abs-center">
           <div id="test" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#test3" data-slide-to="2"></li>
@@ -210,7 +208,7 @@
               Budaya
             </text>
             <text
-              x="3.4"
+              x="3.42"
               y="2.2"
               text-anchor="end"
               font-size="1.2"
