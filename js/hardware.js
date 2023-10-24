@@ -9,6 +9,5 @@ const openHardware = () => {
   setTimeout(closeHardware, 3000);
 };
 
-setTimeout(openHardware, 300);
-
+// setTimeout(openHardware, 300);
 okayBtn.addEventListener('click', closeHardware);

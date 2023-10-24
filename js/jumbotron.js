@@ -33,7 +33,7 @@ const finishLoading = () => {
 triggerLoading();
 setInterval(() => {
   triggerLoading();
-}, 7000);
+}, 10000);
 
 // window.addEventListener('mousedown', () => {
 //   barDiv.style.width = '100%';

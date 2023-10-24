@@ -54,29 +54,43 @@
 }
 
 #gameDialog{
-  padding: 2.6rem 5rem;
+  padding: 2rem 3rem;
   color: black;
   position: absolute;
-  bottom: 30px;
-  width: 100%;
-  background-size: cover;
-  background-image: url('/assets/dialog.png');
+  bottom: 8%;
+  width: 70%;
+  border-radius: 1.5rem;
+  height: fit-content;
+  background-color: rgba(20, 20, 20, 0.899);
   left: 50%;
   transform: translateX(-50%);
-  width: 1200px;
-  min-height: 300px;
+}
+
+#gameDialog img {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
 
 .text-dialog {
   color: rgb(88, 28, 0);
 }
 
-#gameDialog h3 {
-  margin-left: 130px;
+#gameDialogContentContainer{
+
+
 }
 
+
+
+
 #gameDialog  #gameDialogContent{
-  margin-top: 40px;
+  color: white;
+  margin-top: 20px;
 }
 
 #gameCarousel {
@@ -89,6 +103,28 @@
 }
 .carousel-inner {
   border-radius: 30px;
+}
+
+#game-joypad{
+  position: absolute;
+  bottom: 3%;
+  left: 3%;
+  display: none;
+  border-radius: 100%;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+
+#game-joypad .pad:active{
+  background-color: rgba(0, 0, 0, 0.493);
+}
+
+#game-joypad .pad{
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
 }
 
 
@@ -104,14 +140,40 @@
   position: relative;
 }
 
+
+#game-hud  svg{
+  cursor: pointer;
+  opacity: 30%;
+  z-index: 20;
+}
+
+#game-hud{
+  display: flex;
+  gap: 2px;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+
+
+#game-container{
+  position: absolute;
+}
+
 .carousel-item h2{
   position: absolute;
   top: -45px;
+  text-transform: uppercase;
   font-family: consolas;
   opacity: 1;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   left: 85px;
+}
+
+.bottom-content-inside{
+  display: flex;
 }
 
 /* Change Bootstrap Next and Prev Icon */
@@ -124,3 +186,98 @@
    margin-top: 30px;
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%6e340e' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
  }
+
+ @media only screen and (max-width: 700px) {
+  .jumbotron-title{ 
+    display: none;
+  }
+  .carousel-image {
+    margin-left: 2px;
+    border-radius: 10px;
+    margin-top: 40px;
+    width: 300px;
+    height: 230px;
+  }
+  .carousel-item h2 {
+    left: 40px;
+    top: -55px;
+  }
+  .bottom-content-inside{
+    gap: 15px;
+    flex-direction: column;
+  }
+  .game-hider .mobile-view img {
+    position: absolute;
+    left: 0;
+    top:0 ;
+    width: 100%;
+    height: 100%;
+  }
+  .game-hider .mobile-view{
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+ }
+ 
+ @media only screen and (max-width: 500px) {
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 1.3rem !important;
+    height: 1.3rem !important;
+  }
+  
+  .bottom-content {
+    bottom: 5%;
+  }
+
+  .carousel-control-next, .carousel-control-prev {
+    width: 25% !important;
+  }
+
+  #carousel-root {
+    padding: 60px;
+  }
+  .carousel-image {
+    margin-left: 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 180px;
+    height: 150px;
+  }
+  .carousel-item h2 {
+    font-size: 20px;
+    left: 20px;
+    top: -50px;
+  }
+ }
+ @media only screen and (max-width: 350px) {
+  .carousel-item h2 {
+    font-size: 15px;
+    left: 0px;
+    top: -53px;
+  }
+  .carousel-image {
+    margin-left: 2px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 120px;
+    height: 80px;
+  }
+ }
+
+ @media screen and (orientation:landscape) {
+  .carousel-image {
+    margin-left: 2px;
+    border-radius: 10px;
+    margin-top: 40px;
+    width: 250px;
+    height: 180px;
+  }
+  .carousel-item h2 {
+    left: 40px;
+    top: -55px;
+  }
+  }

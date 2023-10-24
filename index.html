@@ -71,7 +71,7 @@
     <section id="jumbotron" class="h-screen w-full position-relative">
       <div class="game-hider bottom-content z-3">
         <div
-          class="d-flex h-fit w-full align-items-center justify-content-between"
+          class="bottom-content-inside h-fit w-full align-items-center justify-content-between"
         >
           <div id="play-game-btn">PLAY GAME</div>
           <div class="loading">
@@ -84,7 +84,49 @@
       </div>
 
       <!-- Game -->
-      <div class="z-1 position-absolute w-h-full top-0 start-0">
+      <div class="z-1 w-h-full top-0 start-0" id="game-container">
+        <div
+          id="game-joypad"
+          class="flex-column align-items-center justify-content-center gap-2"
+        >
+          <button class="pad" id="game-joypad-top"></button>
+          <div class="h-100 w-100 d-flex bg-red-300 gap-2">
+            <button class="pad" id="game-joypad-left"></button>
+            <button class="pad" id="game-joypad-right"></button>
+          </div>
+          <button class="pad" id="game-joypad-down"></button>
+        </div>
+        <div id="game-hud">
+          <svg
+            id="fullscreen"
+            stroke="#000000"
+            fill="#000000"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            height="3em"
+            width="3em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z"
+            ></path>
+          </svg>
+          <svg
+            id="unfullscreen"
+            stroke="#000000"
+            fill="#000000"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            height="3em"
+            width="3em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.5 0a.5.5 0 0 1 .5.5v4A1.5 1.5 0 0 1 4.5 6h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 10 4.5v-4a.5.5 0 0 1 .5-.5zM0 10.5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 6 11.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zm10 1a1.5 1.5 0 0 1 1.5-1.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4z"
+            ></path>
+          </svg>
+        </div>
         <div
           style="display: none"
           id="black-modal"
@@ -94,8 +136,13 @@
         <canvas class="w-h-full" id="gameCanvas"></canvas>
         <!-- Dialogue -->
         <div id="gameDialog" class="dialog">
-          <h3 id="gameDialogTitle" class="text-white consolas">Narrator</h3>
-          <h5 id="gameDialogContent" class="text-dialog consolas">Test</h5>
+          <img src="/assets/dialog.png" alt="" />
+          <div id="gameDialogContentContainer">
+            <h3 id="gameDialogTitle" class="pixel text-white consolas">
+              Narrator
+            </h3>
+            <h5 id="gameDialogContent" class="text-dialog consolas">Test</h5>
+          </div>
         </div>
         <div style="display: none" id="gameCarousel" class="z-5 abs-center">
           <div id="test" class="carousel slide" data-ride="carousel">
@@ -142,7 +189,10 @@
       <!-- Jumbotron Background -->
       <div class="game-hider z-2 w-h-full top-0 start-0 position-absolute">
         <div class="bottom-0 position-absolute z-3 down-background"></div>
-        <div class="z-4 position-absolute left-text">
+        <div class="mobile-view">
+          <img src="/assets/wallpaper_fixed.png" alt="" />
+        </div>
+        <div class="jumbotron-title z-4 position-absolute left-text">
           <svg viewbox="-2 0 10 2.3">
             <text
               x="2.28"
@@ -176,11 +226,12 @@
     </section>
 
     <!-- Section Two  -->
-    <section class="information bg-black between center text-white">
+    <section
+      class="overflow-hidden information bg-black between center text-white"
+    >
       <div class="center gap-5">
-        <!-- /.col-lg-4 -->
         <div
-          class="d-flex flex-column justify-content-center align-items-center col-lg-4"
+          class="d-flex flex-column justify-content-center align-items-center"
         >
           <img
             class="rounded"
@@ -208,7 +259,7 @@
       class="h-screen inter w-full container gap-5 d-flex h-fit justify-content-center beach-list"
     >
       <div id="beach-list-left" class="position-relative d-block left">
-        <div class="position-absolute left-container to-be-fixed">
+        <div class="left-container to-be-fixed">
           <div class="sticky d-flex gap-5">
             <!-- <img class="flower" src="/assets/flower.gif" alt="" /> -->
             <div class="left-inside d-flex flex-column gap-3">

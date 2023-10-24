@@ -1,4 +1,5 @@
 import { data } from '../data/data.js';
+import { debug } from '../utils/debug-helper.js';
 import { dialog } from '../utils/dialog-helper.js';
 import { moveable } from '../utils/setting.js';
 
@@ -32,6 +33,13 @@ export class Trigger {
       });
     });
   };
+
+  renderTrigger() {
+    for (let i = 0; i < this.collideMap.length; i++) {
+      const collide = this.collideMap[i];
+      debug(-collide.x, -collide.y, collide.w, collide.h, 'black');
+    }
+  }
 
   isCollideCollider(x, y, w, h) {
     const bg = moveable[0];
@@ -71,7 +79,6 @@ export class Trigger {
 
   build() {
     const carouselRoot = document.getElementById('carousel-root');
-
     let temp = '';
 
     for (let i = 0; i < this.images.length; i++) {
@@ -138,6 +145,7 @@ export class Trigger {
   }
 
   logic() {
+    if (!this.player) return;
     const { x, y, w, h } = this.player;
     const isCollide = this.isCollideCollider(x, y, w, h);
     if (isCollide && !this.alreadyCollide) {

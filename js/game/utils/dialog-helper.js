@@ -1,4 +1,4 @@
-import { dialogSpeed } from './setting.js';
+import { dialogSpeed, punctuationSpeed } from './setting.js';
 
 const dialogDiv = document.getElementById('gameDialog');
 const dialogTitleDiv = document.getElementById('gameDialogTitle');
@@ -11,6 +11,7 @@ let currentTitle;
 let skip = false;
 let currentCallback = null;
 export let isDialogOpen = false;
+const punctuations = [',', '.'];
 
 export const dialog = (text, title, callback) => {
   currentCallback = callback;
@@ -30,9 +31,14 @@ export const dialog = (text, title, callback) => {
       typing = false;
     } else {
       if (index < currentText.length) {
-        dialogContentDiv.innerHTML += currentText.charAt(index);
+        const char = currentText.charAt(index);
+        dialogContentDiv.innerHTML += char;
         index += 1;
-        setTimeout(type, dialogSpeed);
+        let extraSpeed = 0;
+        if (punctuations.includes(char)) {
+          extraSpeed += punctuationSpeed;
+        }
+        setTimeout(type, dialogSpeed + extraSpeed);
       }
       if (index === currentText.length) {
         typing = false;

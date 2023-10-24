@@ -8,28 +8,28 @@ const datas = [
   },
   {
     date: 'Keajaiban Alam Bawah Laut',
-    title: 'Taman Nasional Bunaken, Sulawesi Utara',
+    title: 'Taman Nasional Bunaken',
     content:
       'Taman Nasional Bunaken adalah surga bagi penyelam dan pecinta snorkeling. Terletak di Sulawesi Utara, taman nasional ini menawarkan keanekaragaman biota laut yang luar biasa dengan lebih dari 390 jenis koral dan berbagai jenis ikan tropis. Kejernihan airnya yang memukau memungkinkan wisatawan untuk menyaksikan keindahan bawah laut dengan jelas.',
     img: '/assets/taman-nasional-bunaken.jpg',
   },
   {
     date: 'Budaya dan Sejarah Kuno',
-    title: 'Candi Borobudur, Jawa Tengah',
+    title: 'Candi Borobudur Jawa Tengah',
     content:
       'Candi Borobudur adalah monumen Buddha terbesar di dunia dan salah satu keajaiban dunia dari Indonesia. Terletak di Jawa Tengah, candi ini dibangun pada abad ke-9 dan menampilkan relief yang menggambarkan ajaran Buddha. Keindahan arsitektur dan nilai historisnya menjadikan Borobudur sebagai destinasi wisata yang wajib dikunjungi.',
     img: '/assets/candi-borobudur.jpg',
   },
   {
     date: 'Petualangan Alam Liar',
-    title: 'Taman Nasional Komodo, Nusa Tenggara Timur',
+    title: 'Taman Nasional Komodo',
     content:
       'Taman Nasional Komodo adalah rumah bagi hewan purba, Komodo. Terletak di Nusa Tenggara Timur, taman nasional ini menawarkan pengalaman petualangan yang unik di antara pulau-pulau indah dan pantai berpasir merah. Selain Komodo, wisatawan juga bisa menyaksikan keanekaragaman fauna lainnya dan menikmati snorkeling di perairan yang jernih.',
     img: '/assets/taman-nasional-komodo.jpg',
   },
   {
     date: 'Pesona Budaya Bali',
-    title: 'Pura Uluwatu, Bali',
+    title: 'Pura Uluwatu Bali',
     content:
       'Pura Uluwatu adalah salah satu pura laut yang paling terkenal di Bali. Terletak di atas tebing dengan pemandangan Samudra Hindia yang menakjubkan, Pura Uluwatu adalah tempat yang sempurna untuk menyaksikan matahari terbenam. Selain itu, wisatawan juga bisa menyaksikan pertunjukan tari Kecak yang menampilkan cerita epik Ramayana di malam hari.',
     img: '/assets/uluwatu.jpg',

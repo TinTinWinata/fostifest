@@ -16,7 +16,7 @@
 }
 
 .pixel {
-  font-family: 'Pixelify Sans', sans-serif;
+  font-family: 'Pixelify Sans', consolas,  sans-serif;
 }
 
 .consolas {
@@ -200,6 +200,7 @@ border: 3px solid #ffffff;
 
 .beach-list .left-container {
   top: 60px;
+  position: absolute;
   height: 100%;
 } 
 
@@ -222,6 +223,9 @@ border: 3px solid #ffffff;
 }
 
 .information p{
+  width: 50%;
+  margin: 0 auto;
+  padding: 0px 50px;
   font-size: 20px;
   line-height: 30px;
   font-weight: 300;
@@ -285,6 +289,129 @@ border: 3px solid #ffffff;
   left:0;
 }
 
+
+
 .link svg:hover{
   top: -5px;
 }
+
+
+
+/* Section Two */
+@media only screen and (max-width: 1200px) {
+  .information p {
+    width: 100%;
+  }
+  .beach-list{
+    flex-direction: column;
+  }
+  .beach-list .left {
+    width: 100%;
+  }
+  .beach-list .sticky {
+    position: relative !important;
+    width: 100%;
+  }
+  .beach-list .left-inside {
+    width: 100%;
+  }
+  .beach-list .middle{
+    display: none ;
+  }
+  .left-container{
+    position: relative !important;
+  }
+  .left-inside .date{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .beach-list .img-container iframe{
+    height: 500px;
+  }
+  .beach-list-container {
+    align-items: center;
+  }
+
+  .beach-list img {
+    width: 550px;
+    height: 350px;
+    border-radius: 30px;
+  }
+
+  .beach-list .content {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  #beachRoot {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .information img {
+    width: 300px !important;
+    height: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .quote {
+    width: 80%;
+    margin-top: 10px;
+    opacity: 80%;
+    color: rgb(84, 84, 84);
+  }
+  .hardware .bulb 
+  {
+    display: none ;
+  }
+  .information img {
+    width: 400px;
+    height: 250px;
+  }
+  .information h1{
+    padding: 0px 20px;
+  }
+  .information p {
+    font-size: 15px;
+  }
+  .left-container{
+    padding: 20px;
+  }
+  #beachRoot{
+    padding: 20px;
+  }
+
+  .beach-list .date{
+    width: 100% !important;
+    text-align: left;
+  }
+  .beach-list-container .title {
+    font-size: 50px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .beach-list .content {
+    width: 98%;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .beach-list img {
+    width: 100%;
+    height: auto ;
+    border-radius: 30px;
+  }
+  #last-section img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
+  }
+  .beach-list .img-container iframe {
+    height: 300px;
+  }
+}
+
